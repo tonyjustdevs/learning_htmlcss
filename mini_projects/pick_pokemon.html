@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>🧪 Welcome to Professor Oaks Lab 🧪</title>
+    </head>
+    <body>
+        <form action="tonysfakepokemon_backend.php">
+        
+            <fieldset>
+                <legend>Enter Trainer Name (Required)</legend>
+                <input type="text" name="trainer" id="trainer" 
+                required autofocus autocomplete="off"
+                placeholder="Cool Names Only">
+            </fieldset>
+
+            <fieldset>
+                <legend>Enter Trainer Email (Required)</legend>
+                <input type="email" name="email" id="email" 
+                required autocomplete="off"
+                placeholder="Spammable Email Please">
+            </fieldset>
+
+            <p></p>
+            <fieldset>
+                <legend>Choose Pokémon </legend>
+                    <input type="radio" name="chosen_pokemon" id="charmander" value="charmander" required>
+                    <label for="charmander">🔥    Charmander</label><br>
+
+                    <input type="radio" name="chosen_pokemon" id="squirtle" value="squirtle">
+                    <label for="squirtle">🌊 Squirtle</label><br>
+
+                    <input type="radio" name="chosen_pokemon" id="bulbasaur" value="bulbasaur">
+                    <label for="bulbasaur">🌱 Bulbasaur</label><br>
+                    
+                    <input type="radio" name="chosen_pokemon" id="bulbasaur" value="pikachu" disabled>
+                    <label for="pikachu">⚡ Pikachu</label><br>
+
+                    <input type="radio" name="chosen_pokemon" id="mew" value="mew" disabled>
+                    <label for="Mew" >🪄 Mew</label><br>
+            </fieldset>
+            <p></p>
+            <fieldset>
+                <legend>Date-Of-Birth (Optional)</legend>
+                <input type="date" name="dob" id="dob">
+            </fieldset>
+            <p></p>
+            <fieldset>
+                <legend>Choose Adventure</legend>
+                <input type="submit" value="🔮 Take Pokeball" ">
+                <input type="reset" value="🧹 Reset All">
+            </fieldset>
+            
+        </form>
+
+    </body>
+
+
+
+
+
+</html>
