@@ -1,0 +1,14 @@
+.align_cls { text-align: right; }
+.lrg_cls {
+    font-size: xxx-large; 
+    font-weight: bolder;
+    font-family: Impact;
+}
+.med_cls {
+    font-family: 'Lucida Sans Unicode';
+    font-size: large;
+}
+.lil_cls {
+    font-size: small; 
+    font-family: 'Times New Roman';
+}    
