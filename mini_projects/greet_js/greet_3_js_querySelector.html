@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function gday_js_fn()
+        {
+            let name_var_js = document.querySelector('#name_id').value
+            // alert("G'day Matey's 🐨🐨🐨!")
+            alert("G'day " + name_var_js + " 🐨🐨🐨!")
+        }
+    </script>
+    <title>G'day JS-Style 🖲️</title>
+</head>
+
+<body>
+    <form onsubmit="gday_js_fn(); return false;">
+        <input id = name_id placeholder = "Name" autocomplete = "off" autofocus>
+        <input type="submit">
+    </form>
+</body>
+
+</html>
