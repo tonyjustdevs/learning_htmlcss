@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Using a form.addEventListener
+        </title>
+    </head>
+        <body>
+            <!-- <form onsubmit="gday_js_fn()"> -->
+            <form>
+                <input type="text" id="name_id" placeholder="name"
+                autofocus autocomplete="off" name="namevar_to_svr">
+                <input type="submit">
+            </form>
+        </body>
+
+                <script>
+                    /**
+                     * @param {SubmitEvent} event
+                     */
+                    document.querySelector("form").addEventListener("submit", function (event){
+                        console.log(event)
+                        let name_js_var = document.querySelector("#name_id").value;
+                        alert("mate! yo 🍕 "+name_js_var+", ya igga?!");
+                        event.preventDefault();
+                    })
+
+                    // function gday_js_fn(event){
+                    //     console.log(event)
+                    //     let name_js_var = document.querySelector("#name_id").value;
+                    //     alert("mate! yo 🍕 "+name_js_var+", ya igga?!");
+                    //     event.preventDefault();
+                    // }
+                    // let form = document.querySelector("form")
+                    // form.addEventListener("submit", gday_js_fn)
+
+
+                
+                </script>
+
+
+</html>
