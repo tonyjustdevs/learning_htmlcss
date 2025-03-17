@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic Greet JS </title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            let input = document.querySelector("input")
+            input.addEventListener("keyup",function(){
+                let name = document.querySelector("p")
+            if (input.value){
+                    name.innerHTML = `hi ${input.value}` 
+                } else{
+                    name.innerHTML="hi champ"
+                }
+            })
+            
+        })
+    
+        
+    </script>
+</head>
+<body>
+    <input type="text" name="name" id="name_id" placeholder="name"
+    autocomplete="off" autofocus>
+    <p></p>
+</body>
+</html>
