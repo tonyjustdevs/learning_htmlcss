@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic BG Colors</title>
+</head>
+    <body>
+        <!-- 1. create buttons - in <body> -->
+        <input type="button" value="R" id="r_id">
+        <input type="button" value="G" id="g_id">
+        <input type="button" value="B" id="b_id">
+    </body>
+    <script>
+        
+        // 2. get buttons
+        const red_btn       = document.getElementById("r_id")
+        const blue_btn      = document.getElementById("b_id")
+        const green_btn     = document.getElementById("g_id")
+        // 3. get body
+        let body = document.querySelector("body")
+        
+        red_btn.addEventListener("click",function(){
+            body.style.backgroundColor = "red"
+        })
+
+        green_btn.addEventListener("click",function(){
+            body.style.backgroundColor = "green"
+        })
+
+        blue_btn.addEventListener("click",function(){
+            body.style.backgroundColor = "blue"
+        })
+
+        // 4. add event listerner: if clicked -> change body.style.bgcolor to color
+
+
+
+    </script>
+
+</html>
