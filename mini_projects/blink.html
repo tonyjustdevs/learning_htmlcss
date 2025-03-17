@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blinkity</title>
+
+    <script>
+        // 1. get text_element
+
+        function blink(){
+        let p = document.querySelector("p");
+        // 2. if text_element.style visible
+        if (p.style.visibility=="visible") {
+            // 3. then make invisible
+            p.style.visibility="hidden";
+        } else {
+            // 4. else make visible
+            p.style.visibility="visible";
+        }}
+
+        window.setInterval(blink,500);
+
+    </script>
+</head>
+<body>
+    <p>Sup broooOOoOOoo 🐶!</p>
+
+</body>
+</html>
