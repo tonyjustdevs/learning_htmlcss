@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Autocomplete 2</title>
+    <style>
+        body {
+            background-color: #1d3b53;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <ul></ul>
+
+    <script>
+        const TEST_WORDS = ["aadvark","adding","addition","add","advice","apple","acrobat"];
+        let input = document.querySelector("input");// 1. let {js_var_1}: [INPUT_ELEMENT] (input-element)
+        input.addEventListener("keyup",function(){// 2.   add addEventListener to [INPUT_ELEMENT] for "keyup"
+            let html_to_render = "";// 3. let {js_var_2}: empty [html] (ul-element)
+
+
+            if (input.value){// 4. if [INPUT_ELEMENT.VALUE] -> 
+                for (let word of TEST_WORDS){// 5.   for_loop [word of WORDS]
+                    if (word.startsWith(input.value)){// 6.   if [word.startwith] == ([INPUT_ELEMENT.VALUE])
+                        html_to_render += `<li>${word}</li>`; // 7.       html += `${word}`
+                        console.log(word)
+                    }
+                }
+                document.querySelector("ul").innerHTML = html_to_render; // 8. let {js_var_2}.innerHTML = html]
+            } else {
+                document.querySelector("ul").innerHTML = "cunt!"; // 8. let {js_var_2}.innerHTML = html]
+            }
+            })
+        // 8.  
+        // for (word of TEST_WORDS){
+        //     console.log(word)}
+
+
+    </script>
+</body>
+</html>

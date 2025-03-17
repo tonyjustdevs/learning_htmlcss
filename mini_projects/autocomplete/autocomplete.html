@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Autocomplete JS</title>
+</head>
+    <body>
+        <input type="text" placeholder="Query" autofocus autocomplete="offs">
+        <ul></ul>
+    </body>
+    <script src="words_js.js"></script> 
+    <!-- <script src="words_js_smol.js"></script>  -->
+    <!-- 2. add word_array - dictionary.js -->
+    <script>
+        // 1. get input
+
+        // const TEST_WORDS = ["aardvark","aaa","apple","arabia","advisor","advice"]
+        const body = document.querySelector("body")
+        body.style.backgroundColor="#011627"
+        let input = document.querySelector("input")
+        input.addEventListener("keyup",function(event){
+            let html_to_render = "";
+            if (input.value){
+                for (word of WORDS){
+                // for (word of TEST_WORDS){
+                    if (word.startsWith(input.value)){
+                        html_to_render+= `<li>${word}</li>`;
+                    }
+                }
+            }
+            document.querySelector('ul').innerHTML = html_to_render;
+        })
+        // 3. input -> addeventListener -> keyup
+        // 4. for word of word_array -> 
+        // 5.   if starts_with(input.value) == word
+        // 6.   append_to_ul += `<li>word from word_array<li>`
+        // 7. querySelector(ul).innerHTML = from 6.
+
+
+        
+
+
+    </script>
+</html>

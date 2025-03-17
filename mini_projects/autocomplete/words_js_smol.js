@@ -1,0 +1,1 @@
+let WORDS=["a","aa","aaa","aah","aahed","aahing","aahs","aal","aalii","aaliis"]
