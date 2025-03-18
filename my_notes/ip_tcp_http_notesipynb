@@ -1,0 +1,48 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 1. Hypertext Transfer Protocol (HTTP)\n",
+    "Recall:\n",
+    "\n",
+    "# 2. Internet Protocol (IP)\n",
+    "**Internet**: Interconnected network comparised of smaller networks interwover together & agreeing to communicate with one another:\n",
+    "\n",
+    "**Internet Protocol** (IP): The protocol that *moves* information from a sending *machine* to a *receiving* machine, through the *network*.\n",
+    "- *Problem*: Connecting (wired) every network to every network is a tough and impossible task.\n",
+    "- *Solution*: The use of the **Router** (actually many routers), as intermediaries, each router connects to other nearby routers.\n",
+    "    - Each router has instructions (built-in) on how to move information towards destination\n",
+    "    - Information in a routing table (inside router)\n",
+    "- *Benefit*: On large scales, dramatically decrease cost of network infrastructure\n",
+    "- *Cost*: On small scales, less efficient than direct connections\n",
+    "- *How*: In reality, the data (sending email, FTP file transfer, web browser request) is not sent as *one block* but rather, ***split into*** **packets**.\n",
+    "    - *Why* packets: Analogous to packets are cars and blocks are trucks. A single large truck is slow could slow down a whole road, whilst having many smaller cars may be more efficient to move loads.\n",
+    "- *Connectionless* protocol: Not necessarily a defined path form sender to receiver & vice versa.\n",
+    "    - *Benefit*: Traffice may be ***re-routed*** based on *current state* of the network (clogging on certain paths, take other more optimal routes instead). It's analogous to a GPS telling a driver there is traffic ahead and suggesting a *longer but less congested* way.\n",
+    "* *Not a Solution*: \n",
+    "    - Question: What if a ***packet is dropped***? A small car carrying load has an accident, what happens to this load? Note: \n",
+    "    - Not the Answer: **IP does not guarantee delivery**.\n",
+    "    - Answer: The job to *guarantee delivery* is for the **Tranmission Communication Protocol** (TCP).\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 3. Tranmission Communication Protocol (TCP):\n",
+    "\n",
+    "**Tranmission Communication Protocol** (TCP): can be thought of:the directing"
+   ]
+  }
+ ],
+ "metadata": {
+  "language_info": {
+   "name": "python"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
