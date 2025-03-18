@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="words_js.js"></script>
+        <style>
+            body {background-color: #011627; text-align: center;}
+            li {color: #80a4c2; }
+        </style>
+
+        <title> 🏇 Autocomplete via Javascript 🏇 </title>
+    </head>
+    <body>
+        <input type="text" name="input_to_svr" id="input_id" placeholder="Query" autofocus autocomplete="off">
+        <ul></ul>
+        <script>
+            // #011627 #80a4c2 #d3423e
+            // 1. add words_array(js)
+            // let WORDS = ["mate","marmite","mam","marmalade", "math","mathematics","mates","mattress"]
+            
+            // 2. get_element [input]
+            let input_element = document.querySelector("input");
+            input_element.addEventListener("keyup",function(){
+                let ul_element = document.querySelector("ul")
+                // 3:  add(): [3a. new_html_el (<li>s)] [input_el] matches [word.starts_with]
+                    // 3a. create(): [new_html_element] - empty ""
+                new_html_element = "";
+                // 3b. if something is typed...
+                if (input_element.value) {
+                    // 3bi. if()[word.startswith(current_input)]
+                    for (let word of WORDS){ 
+                        if (word.startsWith(input_element.value)) {
+                        // 3bii. if(match), append: [new_html_element] += `<li> input </li>`
+                        new_html_element += `<li>${word}</li>`;
+                        console.log(input_element.value);
+                    } else {
+                        console.log("no word typed...(input_element.value is NULL):" + input_element.value);
+                    }
+                }
+                // 4a update(): [ul_element] with final [new_html_element] 
+                document.querySelector("ul").innerHTML = new_html_element;
+            }})
+        </script>
+    </body>
+</html>
