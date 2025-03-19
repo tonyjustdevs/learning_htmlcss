@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>just js 1</title>
+</head>
+<body>
+    <button>Press Me</button>
+    <ul></ul>
+    <script>
+        
+        var nums_array = [1,2,3,4,5]
+        let btn = document.querySelector("button")
+        btn.addEventListener("click",function(){
+            nums2_array = nums_array.map(function(num){
+                return num*2
+            })
+            new_li = ""
+            for (var num in nums_array){
+                new_li += `<li>${nums_array[num]}:${nums2_array[num]} </li>`
+            }
+            document.querySelector("ul").innerHTML=new_li
+        })
+            
+    </script>
+</body>
+</html>
