@@ -4,7 +4,15 @@
     <title>just js 1</title>
 </head>
 <body>
-    <button>Press Me</button>
+    <button>Press Me 1</button>
+    
+    <button onclick="greet()">Press Me 2</button>
+    
+    <input type="submit" value="Press Me 3" onclick="greet2()">
+    
+    
+    <button onclick="tonyAlerter(event)">GET ALERT🚨`</button>
+
     <ul></ul>
     <script>
         
@@ -20,6 +28,25 @@
             }
             document.querySelector("ul").innerHTML=new_li
         })
+
+        function greet(){
+            alert("mate")
+        }
+        function greet2(){
+            alert("mate2")
+        }
+
+        /**
+         * @param {MouseEvent} event
+         */
+        function tonyAlerter(event){
+            const clicked_element = event.target;
+            const node_name = event.id;
+            
+            alert("You clicked on " + clicked_element.innerHTML + ". Node node: "+ node_name) 
+        }
+
+
             
     </script>
 </body>
