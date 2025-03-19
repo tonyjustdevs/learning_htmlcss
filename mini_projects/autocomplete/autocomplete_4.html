@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hi Title 👔</title>
+    </head>    
+    <body>
+        <label for="name_of_input">Autonycomplete!</label><br>
+
+        <input type="text" id="name_of_input">
+        <ul></ul>
+        <script>
+            // 1. get js [WORDS]
+            let WORDS = ["mate", "mattress", "mates", "madam", "meat", "meal", "me", "mail", "male"]
+            // 2. get elements [input], [ul], [p]
+            let input_element   = document.querySelector("input")
+            input_element.addEventListener("keyup",function(){
+                let new_li = "" // each time a key is pressed, check [input.value] against [word.startswith]
+                if (input_element.value){
+                    for (let word of WORDS) {
+                        if (word.startsWith(input_element.value)){ //append to new_li
+                            // new_li += `<li>${word}</li>`
+                            new_li += `<li>${word.replace(input_element.value, `<strong>${input_element.value}</strong>`)}</li>`;
+                            console.log(word)
+                        }
+                    }
+                }
+            document.querySelector("ul").innerHTML = new_li;
+            })
+        </script>
+    </body>
+</html>
