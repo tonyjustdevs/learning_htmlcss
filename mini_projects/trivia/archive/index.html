@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Which is the Best Animal?</h3>
+                <button onclick="incorrectAnswer(event)">doggos 🐶🐕</button>
+                <button onclick="correctAnswer(event)">kittys 🐈😺</button>
+                <button onclick="incorrectAnswer(event)">fishys 🐟🐠</button>
+                <button onclick="incorrectAnswer(event)">birdys 🐦🐥</button>
+                <button onclick="incorrectAnswer(event)">horseys 🐎🐴</button>
+                <p id="p1"></p>
+            </div>
+            
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Write the Best Name for the Best Kitty 🐈‍⬛🐈‍⬛🐈‍⬛</h3>
+                
+                <form>
+                    <input type="text" id="kitty_id" autofocus autocomplete="off">
+                    <input type="submit">
+                </form>
+                <p id="p2"></p>
+            </div>
+        </div>
+    
+        <script>
+            const p1_element = document.querySelector("#p1")
+            const buttons_list = document.querySelectorAll("button");
+            function resetButtonColors(){
+                for (let i = 0; i < buttons_list.length; i++) {
+                    buttons_list[i].style.backgroundColor = "#d9edff";
+                }
+            }
+            
+            /**
+             * @param {MouseEvent} event
+             */
+            function incorrectAnswer(event){
+                // https://www.w3schools.com/jsref/met_document_queryselectorall.asp
+                resetButtonColors()
+                let button_element = event.currentTarget
+                button_element.style.backgroundColor = "red";
+                p1_element.innerHTML = "❌❌❌ WRONG, YOU LOSE! "
+            }
+            function correctAnswer(event){
+                resetButtonColors()
+                let btn = event.target
+                btn.style.backgroundColor = "green"
+                p1_element.innerHTML = "🏆🏆🏆 RIGHT, YOU WIN!"
+                
+            }
+            
+            // let input = document.querySelector("#input_button")
+            // input.addEventListener("submit",function(event){
+                //     event.preventDefault();
+                //     if (input.value) {
+                    //         if (input.value == "Oreo") {
+                        //             input.style.backgroundColor = "green"
+                        //             p2_element.innerHTML = `🏆🏆🏆 EXCELLENT Oreo is The Best Name, YOU WIN!`
+                        //         } else {
+                            //             input.style.backgroundColor = "red"
+                            //             p2_element.innerHTML = `💩💩💩 WTF ${input.value} is CRAP, YOU LOSE!`
+                            //         }
+                            //     } 
+                            // })
+                            
+            const p2_element = document.querySelector("#p2")
+            
+            const form = document.querySelector("form");
+            form.addEventListener("submit",function(event){
+                input_kitty_element = document.querySelector("#kitty_id");
+                // alert("You typed the kitty name: "+ input_kitty.value)
+                
+                if (input_kitty_element) {
+                    if (input_kitty_element.value == "Oreo") { 
+                        input_kitty_element.backgroundColor = "green"
+                        p2_element.innerHTML = `🏆🏆🏆 EXCELLENT Oreo is The Best Name, YOU WIN!`
+                    } else {
+                        input_kitty_element.backgroundColor = "red"
+                        p2_element.innerHTML = `💩💩💩 WTF ${input_kitty_element.value} is EMBARRASINGq, YOU LOSE!`
+                    } 
+                } 
+                event.preventDefault();
+            })
+        </script>
+    </body>
+</html>

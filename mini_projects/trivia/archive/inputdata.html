@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test input</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="input_name" id="input_id">
+        <input type="button" value="Submit">
+    </form>
+    <script>
+        /**
+         * @param {SubmitEvent} event
+         */
+        let form = document.querySelector("form")
+        form.addEventListener("submit",function(){
+            event.preventDefault();
+            input = document.querySelector("#input_id")
+            alert("input:" + input.value);
+        })
+    </script>
+</body>
+</html>

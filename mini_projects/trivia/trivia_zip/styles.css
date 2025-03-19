@@ -48,20 +48,8 @@ button, input[type="submit"] {
     text-align: center;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     vertical-align: middle;
-    transition-duration: 1.0s;
 }
 
-button:hover {
-    background-color: #7e57c25a; 
-    color: blue;
-    font-weight: 900;
-  }
-
-button:active {
-background-color: #3e8e41;
-box-shadow: 0 5px #666;
-transform: translateY(4px);
-}
 
 input[type="text"] {
     line-height: 1.8;
