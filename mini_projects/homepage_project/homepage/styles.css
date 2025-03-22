@@ -1,0 +1,46 @@
+/* Base Reset (optional but useful for consistency) */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.blog-bgc {
+    background-color: #011627;
+    color: white
+}
+
+.food-bgc {
+    background-color: #ff2c83;
+    color: white
+}
+
+.football-bgc {
+    background-color: #1d3b53;
+    color: white
+}
+
+.oreo-bgc {
+    background-color: #7e57c25a;
+    color: white
+}
+
+.index-bgc {
+    background-color: #637777;
+    color: white
+}
+
+a {
+   color: lightblue
+}
+/* 
+#011627     - night owl bg
+#1d3b53     - nice medium navy 
+#7e57c25a   - light blue
+#637777     - comments - nice medium grey
+#80a4c2     - not as light kinda nice blue		
+#ff2c83     - bg bright orangey red - for errors
+#d3423e     - bg more redder for errors
+#ecc48d     - pretty orange pinkish, quoting or brackets?
+#ffffff     - fg white - for errors
+#d6deeb     - night owl fg */
