@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivial Homepage</title>
+        <script>
+            // 1. get dom content
+            document.addEventListener("DOMContentLoaded", function(){ // 2. get correct class btns
+                /**
+                 * @type {HTMLButtonElement}
+                 */
+                let correct_btn = document.querySelector(".correct");
+                correct_btn.addEventListener("click",function(){
+                    correct_btn.style.backgroundColor = "green";
+                    correct_btn.parentElement.querySelector(".feedback").innerHTML = "Correct 🏆!"
+                })                // 3. get incorrect class btns
+                /**
+                 * @type {HTMLButtonElement}
+                 */
+                let incorrect_btns = document.querySelectorAll(".incorrect");
+                for (let index = 0; index < incorrect_btns.length; index++) {
+                    const incorrect_btn = incorrect_btns[index];
+                    incorrect_btn.addEventListener("click",function(){
+                        incorrect_btn.style.backgroundColor = "red";
+                        incorrect_btn.parentElement.querySelector(".feedback").innerHTML = "Incorrect ❌❌❌!"
+                    })
+                }
+                // 4. get RESET class btns
+                /**
+                 * @type {HTMLButtonElement}
+                 */
+                let RESET_btn = document.querySelector(".reset");
+                RESET_btn.addEventListener("click",function(){
+                    //  (reset.event listener)get all buttons 
+                    RESET_btn.style.backgroundColor="grey";
+                    let ALL_btns = document.querySelectorAll(".btn1");
+                    console.log(ALL_btns.length)
+                    for (let index = 0; index < ALL_btns.length; index++) {
+                        const ALL_btn = ALL_btns[index];
+                        console.log(ALL_btn.innerHTML)
+                        RESET_btn.style.backgroundColor = "#d9edff";
+                        ALL_btn.style.backgroundColor = "#d9edff";
+                        ALL_btn.parentElement.querySelector(".feedback").innerHTML = ""
+                    }
+                    
+                })
+
+                /**
+                 * @type {Array} event
+                 */
+                let acceptedCoolPetNamesArray = ["Oreo", "Lilo", "Stitch", "Momo", "Lucky"]
+                /**
+                 * @type {HTMLTextAreaElement} event
+                 */
+                let input_text = document.getElementById("input_id")
+                let input_btn = document.getElementById("input_btn_id")
+                input_btn.addEventListener("click",function(){
+                    if (acceptedCoolPetNamesArray.includes(input_text.value)){
+                        input_text.style.backgroundColor="green"
+                        input_btn.style="green"
+                        input_btn.parentElement.querySelector("p").innerHTML = `${input_text.value} is a great name 🏆!`;
+                    } else{
+                        input_text.style.backgroundColor="red"
+                        input_btn.style="red"
+                        input_btn.parentElement.querySelector("p").innerHTML = `${input_text.value} is a shit name 💩s!`;
+
+                    }
+                })
+                // get [text_button]
+                //      addEventListener(click,fn{}) -> test [input.value matches]
+                
+                })
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Welcome to Tony's Trivia Bonanza 🎉🎈🍄‍🟫!!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Best Pet?</h3>
+                <button type="button" class="btn btn-primary btn-lg btn-outline-primary incorrect btn1" >🐶</button>
+                <button type="button" class="btn btn-primary btn-lg btn-outline-primary incorrect btn1" >🐔</button>
+                <button type="button" class="btn btn-primary btn-lg btn-outline-primary correct btn1"   >😺</button>
+                <button type="button" class="btn btn-primary btn-lg btn-outline-primary incorrect btn1" >🕷️</button>
+                <button type="button" class="btn btn-primary btn-lg btn-outline-primary reset"          >🧹</button>
+                <p class="feedback"></p>
+            </div>
+            
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Best Kitty Name?</h3>
+                <input type="text" id="input_id">
+                <button type="button" class="btn btn-primary btn-lg btn-outline-primary" id ="input_btn_id" >Check Answer❓❓❓</button>
+                <!-- <button id = "input_btn_id"></button> -->
+                <p class = "feedback"></p>
+            </div>
+        </div>
+    </body>
+</html>
