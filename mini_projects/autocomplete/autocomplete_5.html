@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <script>
+            document.addEventListener("DOMContentLoaded",function(){ // 1-docEl-DCL-af()
+            const input = document.getElementById("input_id")
+            
+            input.addEventListener("keyup",function(){ // 2-inputEl-keyup-af()
+                WORDS_array = ["mate","mat","matt","meat","mam","mail","meet","meal","male"]
+                let li_elements = "";
+                if (input.value){ // 3-`    inputVal-ifelse:
+                // 3a-inputVal-ifelse-exists: [CreateHtml-New-ListElements]
+                    for (let i = 0; i < WORDS_array.length; i++) {
+                        /**
+                         * @type {string}
+                         */
+                        let word_str = WORDS_array[i];
+                        
+                        if (word_str.startsWith(input.value)){
+                            li_elements += `<li>${word_str}</>`;
+                        }
+                    }
+                } else { // close [3a]
+                // 3b-inputVal-ifelse-noexists: --> [CREATE: default_li_els]
+                    li_elements = ""
+                    li_elements += `<li>No Words Entered...</>`;
+                } // close [3b]
+            
+                document.querySelector("ul").innerHTML=li_elements; // [UPDATE_DOM][3ai-update-DOM]
+            }) // close [2]
+        }) // close [1]
+            </script>
+        <title>mr auto v5</title>
+    </head>
+
+    <body>
+        <label for="input_id">Autocomplete</label><br>
+        <input type="text" id="input_id">
+        <ul></ul>
+    </body>
+</html>
